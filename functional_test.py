@@ -49,6 +49,9 @@ class NewVisitorTest(unittest.TestCase):
 		inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
 		inputbox.send_keys(Keys.ENTER)
 
+		# import time 
+		# time.sleep(15)
+
 		# 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다
 		self.check_for_row_in_list_table('1: 공작깃털 사기') 
 		self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
@@ -56,6 +59,7 @@ class NewVisitorTest(unittest.TestCase):
 		# 에디스는 사이트가 입력한 목록을 저장하고 있는지 궁금하다 
 		# 사이트는 그녀를 위한 특정 URL을 생성해준다 
 		# 이때 URL에 대한 설명도 함께 제공된다 
+
 		self.fail('Finish the test!')
 
 		# 해당 URL에 접속하면 그녀가 만든 작업 목록이 그대로 있는 것을 확인할 수 있다 
