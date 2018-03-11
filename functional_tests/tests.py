@@ -25,7 +25,7 @@ class NewVisitorTest(LiveServerTestCase):
 		# 웹 페이지 타이틀과 헤더가 'To-Do'를 표시하고 있다 
 		self.assertIn('To-Do', self.browser.title)
 		header_text = self.browser.find_element_by_tag_name('h1').text
-		self.assertIn('To-Do', header_text)
+		self.assertIn('작업 목록 시작', header_text)
 
 		# 그녀는 바로 작업을 추가하기로 한다 
 		inputbox = self.browser.find_element_by_id('id_new_item')
@@ -40,6 +40,7 @@ class NewVisitorTest(LiveServerTestCase):
 		# 엔터키를 누르면 새로운 URL로 바뀐다. 그리고 작업 목록에 
 		# "1: 공작깃털 사기" 아이템이 추가된다 
 		inputbox.send_keys(Keys.ENTER)
+
 		edith_list_url = self.browser.current_url
 		self.assertRegex(edith_list_url, '/lists/.+')
 		self.check_for_row_in_list_table('1: 공작깃털 사기')
@@ -50,12 +51,13 @@ class NewVisitorTest(LiveServerTestCase):
 		inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
 		inputbox.send_keys(Keys.ENTER)
 
-		import time 
-		time.sleep(5)
-
 		# 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다
 		self.check_for_row_in_list_table('1: 공작깃털 사기') 
 		self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
+
+		
+		import time 
+		time.sleep(5)
 
 		# 새로운 사용자인 프란시스가 사이트에 접속한다 
 
