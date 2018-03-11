@@ -51,13 +51,13 @@ class NewVisitorTest(LiveServerTestCase):
 		inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
 		inputbox.send_keys(Keys.ENTER)
 
+		# import time 
+		# time.sleep(15)
+
 		# 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다
 		self.check_for_row_in_list_table('1: 공작깃털 사기') 
 		self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
 
-		
-		import time 
-		time.sleep(5)
 
 		# 새로운 사용자인 프란시스가 사이트에 접속한다 
 
