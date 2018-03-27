@@ -51,13 +51,13 @@ class NewVisitorTest(LiveServerTestCase):
 		inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
 		inputbox.send_keys(Keys.ENTER)
 
-		# import time 
-		# time.sleep(15)
 
 		# 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다
 		self.check_for_row_in_list_table('1: 공작깃털 사기') 
 		self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
 
+		import time 
+		time.sleep(3)
 
 		# 새로운 사용자인 프란시스가 사이트에 접속한다 
 
@@ -88,6 +88,9 @@ class NewVisitorTest(LiveServerTestCase):
 		page_text = self.browser.find_element_by_tag_name('body').text
 		self.assertNotIn('공작깃털 사기', page_text)
 		self.assertIn('우유사기', page_text)
+
+		import time 
+		time.sleep(3)
 
 		# 둘 다 만족하고 잠자리에 든다 
 
