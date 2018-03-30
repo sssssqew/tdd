@@ -1,7 +1,8 @@
 # tdd
 클린코드를 위한 테스트 주도 개발 책에 대한 코드 
 
-# selenium 을 AWS와 같은 CLI 환경에서 실행하는 경우 아래와 같은 설정이 필요함 
+# selenium 을 AWS와 같은 CLI 환경에서 실행하는 경우   
+  아래와 같은 설정이 필요함   
 1. [Install google chrome]
 ```
 sudo apt-get update
