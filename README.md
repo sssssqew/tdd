@@ -20,21 +20,23 @@ export DISPLAY=:10
 java -jar vendor/se/selenium-server-standalone/bin/selenium-server-standalone.jar -Dwebdriver.chrome.bin="/usr/bin/google-chrome" -Dwebdriver.chrome.driver="vendor/bin/chromedriver"
 ```
 
-# upstart -> systemd
+# 우분투 16.04 이후 버전부터 upstart -> systemd 로 변경하기 
 
 create a gunicorn.service file in /etc/systemd/system/
-gunicorn-SITENAME-staging.example.com.service
+ex) /etc/systemd/system/gunicorn-sylee.co.kr.service
 
 ```
 # Gunicorn Site systemd service file
 
 [Unit]
-Description=Gunicorn server for SITENAME-staging.example.com
+Description=Gunicorn server for sylee.co.kr
 After=network.target
 After=syslog.target
 
-Environment=sitedir=/Development/sites/SITENAME-staging.example.com
-ExecStart=$(sitedir)/virtualenv/bin/gunicorn --chdir $(sitedir)/source workouts.wsgi:application --bind unix:/tmp/SITENAME-staging.example.com.socket
+[Service]
+User=sylee
+WorkingDirectory=/home/sylee/sites/sylee.co.kr
+ExecStart=/home/sylee/sites/sylee.co.kr/virtualenv/bin/gunicorn --chdir /home/sylee/sites/sylee.co.kr/source superlists.wsgi:application --bind unix:/tmp/sylee.co.kr.socket
 Restart=on-failure
 RuntimeDirectory=gunicorn-stagingd
 RuntimeDirectoryMode=755
