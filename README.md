@@ -41,6 +41,5 @@ Restart=on-failure
 RuntimeDirectory=gunicorn-stagingd
 RuntimeDirectoryMode=755
 
-
-#sudo systemctl start gunicorn-SITENAME-staging.example.com.service
+# sudo systemctl start gunicorn-sylee.co.kr.service
 ```
