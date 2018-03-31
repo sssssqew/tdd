@@ -23,17 +23,22 @@ java -jar vendor/se/selenium-server-standalone/bin/selenium-server-standalone.ja
 # upstart -> systemd
 
 create a gunicorn.service file in /etc/systemd/system/
+gunicorn-SITENAME-staging.example.com.service
 
 ```
+# Gunicorn Site systemd service file
+
 [Unit]
-Description=gunicorn daemon
+Description=Gunicorn server for SITENAME-staging.example.com
 After=network.target
+After=syslog.target
 
-[Service]
-User=nero
-Group=www-data WorkingDirectory=/path/to/webapp ExecStart=/path/to/webapp/virtual_env/bin/gunicorn --workers 3 --bind unix:/path/to/webapp/project.sock project.wsgi:application
+Environment=sitedir=/Development/sites/SITENAME-staging.example.com
+ExecStart=$(sitedir)/virtualenv/bin/gunicorn --chdir $(sitedir)/source workouts.wsgi:application --bind unix:/tmp/SITENAME-staging.example.com.socket
+Restart=on-failure
+RuntimeDirectory=gunicorn-stagingd
+RuntimeDirectoryMode=755
 
-[Install]
-WantedBy=multi-user.target
+
+#sudo systemctl start gunicorn-SITENAME-staging.example.com.service
 ```
-started using sudo systemctl start gunicorn
