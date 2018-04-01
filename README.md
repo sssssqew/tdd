@@ -44,7 +44,7 @@ RuntimeDirectoryMode=755
 # sudo systemctl start gunicorn-sylee.co.kr.service
 ```
 
-# 페브릭을 이용한 자동화 스크립트가 제대로 실행되지 않는 경우 
+# 페브릭 자동화 스크립트가 제대로 실행되지 않는 경우 
 
 SSH Key 생성 및 서버에 등록해 줘야 한다. 
 
@@ -57,8 +57,9 @@ chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub  
 chmod 644 ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/known_hosts
-```
 
 # 로컬 pc의 id_rsa.pub 파일을 리모트 서버의 $HOME/.ssh/authorized_keys 파일에 쓰기 
-# ssh -v sylee.co.kr 등으로 서버에 원격접속이 가능함 
+# ssh -v sylee.co.kr 등으로 서버에 원격접속이 가능함
+```
+
 
