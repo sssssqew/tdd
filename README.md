@@ -59,7 +59,8 @@ chmod 644 ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/known_hosts
 
 # 로컬 pc의 id_rsa.pub 파일을 리모트 서버의 $HOME/.ssh/authorized_keys 파일에 쓰기 
-# ssh -v sylee.co.kr 등으로 서버에 원격접속이 가능함
+# 로컬 pc에서  ssh -v sylee.co.kr 등으로 서버(AWS도 포함)에 원격접속이 가능함
+# 운영서버와 스테이징 서버 모두 하나의 서버 안에서 실행할 수 있다 
 ```
 
 https://opentutorials.org/module/432/3742
