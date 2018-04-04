@@ -3,7 +3,7 @@ from lists.forms import EMPTY_LIST_ERROR, ItemForm
 
 class ItemFormTest(TestCase):
 
-	def test_form_renders_item_text_input(self):
+	def test_form_renders_text_input(self):
 		form = ItemForm()
 		self.assertIn('placeholder="작업 아이템 입력"', form.as_p())
 		self.assertIn('class="form-control input-lg"', form.as_p())
