@@ -1,4 +1,5 @@
-# selenium 을 AWS와 같은 CLI 환경에서 실행하는 경우 아래와 같은 설정이 필요함     
+# selenium 을 AWS와 같은 CLI 환경에서 실행하는 경우 아래와 같은 설정이 필요함
+# 하지만 로컬 PC에서도 --liveserver 옵션을 이용해서 원격으로 서버 FT 실행가능함     
 1. [Install google chrome]
 ```
 sudo apt-get update
@@ -41,7 +42,10 @@ Restart=on-failure
 RuntimeDirectory=gunicorn-stagingd
 RuntimeDirectoryMode=755
 
+
+# 자동 배포후 스테이징 서버와 운영서버 모두 gunicorn을 재실행해야 한다.
 # sudo systemctl start gunicorn-sylee.co.kr.service
+# sudo systemctl start gunicorn-live.sylee.co.kr.service
 ```
 
 # 페브릭 자동화 스크립트가 제대로 실행되지 않는 경우 
