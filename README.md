@@ -87,4 +87,6 @@ chromedriver 버전을 브라우저 버전에 호환되도록 다시 다운로�
 tdd/virtualenv/lib/python3.5/site-packages/django/contrib/auth/__init__.py
 2. /is_authenticated()
 3. is_authenticated() 메소드를 is_authenticated 속성으로 수정하기 
+4. 로컬pc뿐만 아니라 스테이징 서버와 운영서버의 동일한 코드 부분도 모두 수정
+5. 서버 gunicorn restart 및 nginx restart
 ```
