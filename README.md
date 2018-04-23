@@ -79,3 +79,12 @@ vim /etc/hosts 파일의 127.0.0.1 localhost 주석 해제하기
 chromedriver 버전이 해당 크롬 브라우저 버전을 지원하지 않아서 생기는 문제
 chromedriver 버전을 브라우저 버전에 호환되도록 다시 다운로드하기 
 ```
+
+# 로그아웃 기능 구현시 'bool' object is not callable 에러 발생시 
+
+```
+1. 아래 파일 수정하기 
+tdd/virtualenv/lib/python3.5/site-packages/django/contrib/auth/__init__.py
+2. /is_authenticated()
+3. is_authenticated() 메소드를 is_authenticated 속성으로 수정하기 
+```
