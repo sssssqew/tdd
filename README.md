@@ -69,3 +69,13 @@ chmod 644 ~/.ssh/known_hosts
 
 https://opentutorials.org/module/432/3742
 
+# socket.gaierror: [Errno -2] Name or service not known 에러 발생시 
+```
+vim /etc/hosts 파일의 127.0.0.1 localhost 주석 해제하기 
+```
+
+# session not created exception 에러 발생시 
+```
+chromedriver 버전이 해당 크롬 브라우저 버전을 지원하지 않아서 생기는 문제
+chromedriver 버전을 브라우저 버전에 호환되도록 다시 다운로드하기 
+```
